@@ -19,7 +19,7 @@ The videos are organised as follows:
 
 - **Aligned towards Right Jumppad**
   
-  - Similarly as above for the right jumppad (corresponding to Section 4.5.2).
+  - Similarly to above for the right jumppad (corresponding to Section 4.5.2).
 
 
 
