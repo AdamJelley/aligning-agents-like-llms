@@ -10,7 +10,7 @@ The videos are organised as follows:
   - This folder contains rollouts demonstrating some undesirable behaviour of the 'Base Model' when rolled out (corresponding to Section 4.1).
 
 - **Fine-Tuned Model**
-- This folder contains 1 example each of the 'Fine-Tuned Model' going to the Left/Middle/Right jumppads, as well as it missing a jumppad, but then turning around to hit it - interestingly a behaviour that was not present in the fine-tuning dataset, but is present in the pre-training dataset (corresponding to Section 4.2).
+- This folder contains 1 example each of the 'Fine-Tuned Model' going to the Left/Middle/Right jumppads (corresponding to Section 4.2). This also contains a video of the agent missing a jumppad, but then turning around to hit it - a behaviour that was not present in the fine-tuning dataset, but would likely have been present in the pre-training dataset.
 
 - **Aligned towards Left Jumppad**
   
