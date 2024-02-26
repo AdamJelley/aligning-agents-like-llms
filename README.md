@@ -1,7 +1,7 @@
 # Aligning Agents Like LLMs
 This repository contains supplmentary videos for the paper "Aligning Agents like LLMs", under review for the first edition of the Reinforcement Learning Conference (RLC).
 
-The videos show sample behaviours of our trained models in the Bleeding Edge environment. Our agent receives the *same* images shown as input (which are resized and fed into CNN layers), and outputs a gamepad action at each timestep.
+The videos show sample behaviours of our trained models in the Bleeding Edge environment. Our agents receive the *same* images shown as input (which are resized and fed into CNN layers), and output a gamepad action at each timestep.
 
 The videos are organised as follows:
 
