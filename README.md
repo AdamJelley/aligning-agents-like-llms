@@ -1,24 +1,24 @@
 # Aligning Agents Like LLMs
-This repository contains supplmentary videos for the ICLR submission "Aligning Agents like LLMs".
+This repository contains supplmentary videos for the paper "Aligning Agents like LLMs", under review for the first edition of the Reinforcement Learning Conference (RLC).
 
-The videos show sample behaviours of our trained models in the Bleeding Edge environment. Our agent receives the *same* images as input (they are then resized before being fed into the CNN layers), and outputs a gamepad action at each timestep.
+The videos show sample behaviours of our trained models in the Bleeding Edge environment. Our agent receives the *same* images shown as input (which are resized and fed into CNN layers), and outputs a gamepad action at each timestep.
 
 The videos are organised as follows:
 
 - **Base Model**
   
-  - This folder contains rollouts demonstrating some undesirable behaviour of the 'Base Model' when rolled out (corresponding to Section 4.1).
+  - This folder contains trajectories demonstrating some undesirable behaviour of the 'Base Model' when rolled out (corresponding to Section 4.1).
 
 - **Fine-Tuned Model**
-  - This folder contains 1 example each of the 'Fine-Tuned Model' going to the Left/Middle/Right jumppads (corresponding to Section 4.2). This also contains a video of the agent missing a jumppad, but then turning around to hit it - a behaviour that was not present in the fine-tuning dataset, but was present in the pre-training dataset.
+  - This folder contains 1 example of the 'Fine-Tuned Model' going to each of the Left/Middle/Right jumppads (corresponding to Section 4.2). It also contains a video of the agent missing a jumppad, but then turning around to hit it - a behaviour that was not present in the fine-tuning dataset, but was present in the pre-training dataset, demonstrating an unexpected benefit of pre-training.
 
 - **Aligned towards Left Jumppad**
 
-  - Contains representative rollouts of the 'Preference FT + 500k Reward Model' agent that has been aligned towards successfully hitting the left jumppad (corresponding to Section 4.5.1).
+  - Contains representative trajectories of the 'Preference FT + 500k Reward Model' agent that has been successfully aligned with navigating to the left jumppad (corresponding to Section 4.5.1).
 
 - **Aligned towards Right Jumppad**
 
-  - Similarly to above for the right jumppad (corresponding to Section 4.5.2).
+  - Equivalent to the above for an agent instead aligned with navigating to the right jumppad (corresponding to Section 4.5.2).
 
 
 
