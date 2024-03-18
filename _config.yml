@@ -1,2 +1,3 @@
-name: test-webpage
+title: Test Webpage
+description: A test webpage.
 theme: jekyll-theme-minimal
