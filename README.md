@@ -3,6 +3,8 @@ This repository contains supplmentary videos for the paper "Aligning Agents like
 
 The videos show sample behaviours of our trained models in the Bleeding Edge environment. Our agents receive the *same* images shown as input (which are resized and fed into CNN layers), and output a gamepad action at each timestep.
 
+If the videos do not play in your browser, please use a different browser (such as Chrome) or check out the corresponding videos in the Supplementary Material.
+
 The videos are organised as follows:
 
 - **Base Model**
