@@ -23,7 +23,7 @@ Training an agent with imitation learning provides a scalable approach to learni
 In this work, we consider an illustrative example where the agent spawns on an island with three jumppads (the yellow ramps in the above videos). We would like our agent to navigate directly to the left (or right) jumppad. We see that our general imitation learning agent sometimes performs this behavior, but not reliably.
 
 <center><figure>
-  <img src="assets/images/Base_jumppad_success.pdf" alt="Base Imitation Model Success Rate" style="width:100%">
+  <img src="assets/images/Base_jumppad_success.png" alt="Base Imitation Model Success Rate" style="width:100%">
   <figcaption>General imitation learning agent jumppad success rates.</figcaption>
 </figure></center>
 
@@ -60,7 +60,7 @@ We begin by fine-tuning our base imitation agent on curated trajectories from ex
 We find that our fine-tuned agent has an increased success rate for reaching all three jumppads. However, the agent still does not have a preference for a particular jumppad, and reaches all three in roughly even proportions.
 
 <center><figure>
-  <img src="assets/images/Fine-tuned_jumppad_success.pdf" alt="Fine-Tuned Imitation Model Success Rate" style="width:80%">
+  <img src="assets/images/Fine-tuned_jumppad_success.png" alt="Fine-Tuned Imitation Model Success Rate" style="width:80%">
   <figcaption>Fine-tuned imitation learning agent jumppad success rates.</figcaption>
 </figure></center>
 
@@ -78,7 +78,7 @@ While these demonstration trajectories can be successfully used for fine-tuning 
 Still following the LLM alignment pipeline, we now train a reward model to capture our preferences about the fine-tuned agent's behavior. In our work we use synthetic preferences to investigate how performance scales with preference labels (a proxy for human labellilng time). We find that initializing the reward model with the agent model enables the reward model to capture our preferences much more accurately, enabling strong performance with comparatively few preference labels.
 
 <center><figure>
-  <img src="assets/images/reward_model_performances.pdf" alt="Reward model performances." style="width:80%">
+  <img src="assets/images/reward_model_performances.png" alt="Reward model performances." style="width:80%">
   <figcaption>Reward model test performances.</figcaption>
 </figure></center>
 
@@ -104,7 +104,7 @@ We find that with this improved alignment procedure that we are able to reliably
 </video>
 
 <center><figure>
-  <img src="assets/images/Fully RL Aligned Left_jumppad_success.pdf" alt="Left-Aligned Model Success Rate" style="width:80%">
+  <img src="assets/images/Fully RL Aligned Left_jumppad_success.png" alt="Left-Aligned Model Success Rate" style="width:80%">
   <figcaption>Left-aligned agent jumppad success rates.</figcaption>
 </figure></center>
 
@@ -124,7 +124,7 @@ We find that with this improved alignment procedure that we are able to reliably
 </video>
 
 <center><figure>
-  <img src="assets/images/Fully RL Aligned Right_jumppad_success.pdf" alt="Right-Aligned Model Success Rate" style="width:80%">
+  <img src="assets/images/Fully RL Aligned Right_jumppad_success.png" alt="Right-Aligned Model Success Rate" style="width:80%">
   <figcaption>Right-aligned agent jumppad success rates.</figcaption>
 </figure></center>
 
@@ -133,11 +133,11 @@ We find that with this improved alignment procedure that we are able to reliably
 A summary of our alignment procedure and a heatmap of agent trajectories for each stage of alignment are shown below.
 
 <center><figure>
-  <img src="assets/images/Figure1.pdf" alt="Alignment Procedure Overview" style="width:100%">
+  <img src="assets/images/Figure1.png" alt="Alignment Procedure Overview" style="width:100%">
   <figcaption>Overview of aligning an agent like an LLM.</figcaption>
 </figure></center>
 <center><figure>
-  <img src="assets/images/Heatmap.pdf" alt="Agent Trajectories Heatmap" style="width:100%">
+  <img src="assets/images/Heatmap.png" alt="Agent Trajectories Heatmap" style="width:100%">
   <figcaption>Heatmap of our agent's trajectories at each stage of alignment.</figcaption>
 </figure></center>
 
