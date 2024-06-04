@@ -23,7 +23,7 @@ Training an agent with imitation learning provides a scalable approach to learni
 In this work, we consider an illustrative example where the agent spawns on an island with three jumppads (the yellow ramps in the above videos). We would like our agent to navigate directly to the left (or right) jumppad. We see that our general imitation learning agent sometimes performs this behavior, but not reliably.
 
 <center><figure>
-  <img src="assets/images/Base_jumppad_success.png" alt="Base Imitation Model Success Rate" style="width:100%">
+  <img src="assets/images/Base_jumppad_success.png" alt="Base Imitation Model Success Rate" style="width:80%">
   <figcaption>General imitation learning agent jumppad success rates.</figcaption>
 </figure></center>
 
