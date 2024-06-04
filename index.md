@@ -24,21 +24,21 @@ In this work, we consider an illustrative example where the agent spawns on an i
 
 <center><figure>
   <img src="assets/images/Base_jumppad_success.png" alt="Base Imitation Model Success Rate" style="width:80%">
-  <figcaption>General imitation learning agent jumppad success rates.</figcaption>
+  <figcaption style="width:70%"><blockquote>General imitation learning agent jumppad success rates.</blockquote></figcaption>
 </figure></center>
 
 We draw an analogy between the undesirable behaviors of our imitation learning agent and the unhelpful respones of unaligned LLMs. Unaligned LLMs (trained only with unsupervised pre-training) contain a lot of knowledge, but frequently produce unhelpful responses, and must be aligned with subsequent supervised pre-training and reinforcement learning from human feedback (RLHF) stages to make them useful. Analagously, while scaling up our model and data can provide improved gameplay knowledge and generality, it provides no means for the agent to distinguish between expert and novice behaviors (or more generally, desired and undesired behaviors).
 
 <center><figure>
   <img src="assets/images/shoggoth.jpg" alt="Shoggoth with Smiley Face" style="width:80%">
-  <figcaption>Source: <a href="https://huyenchip.com/2023/05/02/rlhf.html">https://huyenchip.com/2023/05/02/rlhf</a></figcaption>
+  <figcaption style="width:100%"><blockquote>Artistic illustration of LLM alignment. Source: <a href="https://huyenchip.com/2023/05/02/rlhf.html">https://huyenchip.com/2023/05/02/rlhf</a></blockquote></figcaption>
 </figure></center>
 
 By following the [modern LLM alignment pipeline](https://huyenchip.com/2023/05/02/rlhf.html), we hope to align our base imitation model to reliably perform the desired behavior, and make it useful. More generally, this may include adjusting the ability of the agent, to obtain different gameplay styles or personalities, or just to achieve more human-like behavior.
 
 <center><figure>
   <img src="assets/images/instructgpt_plot.png" alt="InstructGPT Performance Ablation" style="width:80%">
-  <figcaption>Source: <a href="https://openai.com/index/instruction-following">https://openai.com/index/instruction-following</a></figcaption>
+  <figcaption><blockquote>Alignment improves perceived helpfulness across langauge model sizes (InstructGPT). Source: <a href="https://openai.com/index/instruction-following">https://openai.com/index/instruction-following</a></blockquote></figcaption>
 </figure></center>
 
 ---
@@ -47,6 +47,7 @@ By following the [modern LLM alignment pipeline](https://huyenchip.com/2023/05/0
 
 We begin by fine-tuning our base imitation agent on curated trajectories from expert players that travel directly to a jumppad.
 
+<figure>
 <video autoplay muted loop style="pos: right; width: 32%">
     <source src="assets/Fine-Tuned Model/Successful Left.mp4" type="video/mp4">
 </video>
@@ -56,30 +57,35 @@ We begin by fine-tuning our base imitation agent on curated trajectories from ex
 <video autoplay muted loop style="pos: right; width: 32%">
     <source src="assets/Fine-Tuned Model/Successful Right.mp4" type="video/mp4">
 </video>
+<figcaption><blockquote>Demonstration trajectories of an agent going to the left, middle and right jumppads.</blockquote></figcaption>
+</figure>
 
 We find that our fine-tuned agent has an increased success rate for reaching all three jumppads. However, the agent still does not have a preference for a particular jumppad, and reaches all three in roughly even proportions.
 
 <center><figure>
   <img src="assets/images/Fine-tuned_jumppad_success.png" alt="Fine-Tuned Imitation Model Success Rate" style="width:80%">
-  <figcaption>Fine-tuned imitation learning agent jumppad success rates.</figcaption>
+  <figcaption style="width:80%"><blockquote>Fine-tuned imitation learning agent jumppad success rates.</blockquote></figcaption>
 </figure></center>
 
 While these demonstration trajectories can be successfully used for fine-tuning our agent, we find that training an agent from scratch on these limited trajectories does not perform as well. For example, we find that pre-training makes the agent more robust to going out of distribution of the fine-tuning trajectories, since the agent has additional information from pre-training on how to return to the distribution of desired trajectories.
 
+<figure>
 <video autoplay muted loop style="pos: left; width:49%">
   <source src="assets/Fine-Tuned Model/Fine-Tuned Missing but Turning Around.mp4" type="video/mp4">
 </video>
 <video autoplay muted loop style="pos: right; width:49%">
   <source src="assets/Fine-Tuned Only Model/Agent Missing.mp4" type="video/mp4">
 </video>
+<figcaption><blockquote>The general pre-trained agent (left) is more robust to going out-of-distribution than the fine-tuned only agent (right). This simple example demonstrates the benefits of incorporating larger scale data with unsupervised pre-training.</blockquote></figcaption>
+</figure>
 
 ## Preference Modeling
 
-Still following the LLM alignment pipeline, we now train a reward model to capture our preferences about the fine-tuned agent's behavior. In our work we use synthetic preferences to investigate how performance scales with preference labels (a proxy for human labellilng time). We find that initializing the reward model with the agent model enables the reward model to capture our preferences much more accurately, enabling strong performance with comparatively few preference labels.
+Still following the LLM alignment pipeline, we now train a reward model to capture our preferences about the fine-tuned agent's behavior. In our work we use synthetic preferences to investigate how performance scales with preference labels (a proxy for human labellilng time). We find that initializing the reward model with the pre-trained agent enables the reward model to capture our preferences much more accurately, enabling strong performance with comparatively few preference labels.
 
 <center><figure>
   <img src="assets/images/reward_model_performances.png" alt="Reward model performances." style="width:80%">
-  <figcaption>Reward model test performances.</figcaption>
+  <figcaption style="width:80%"><blockquote>Reward model test performances.</blockquote></figcaption>
 </figure></center>
 
 ## Alignment with Reinforcement Learning (Synthetic RLHF)
@@ -90,6 +96,7 @@ We find that with this improved alignment procedure that we are able to reliably
 
 ### Left Jumppad Alignment
 
+<figure>
 <video autoplay muted loop style="pos: left; width: 49%">
     <source src="assets/Aligned towards Left Jumppad/Left Example 1.mp4" type="video/mp4">
 </video>
@@ -102,14 +109,17 @@ We find that with this improved alignment procedure that we are able to reliably
 <video autoplay muted loop style="pos: right; width: 49%">
     <source src="assets/Aligned towards Left Jumppad/Left Example 4.mp4" type="video/mp4">
 </video>
+<figcaption><blockquote>The agent has been aligned to consistently reach the left jumppad.</blockquote></figcaption>
+</figure>
 
 <center><figure>
   <img src="assets/images/Fully RL Aligned Left_jumppad_success.png" alt="Left-Aligned Model Success Rate" style="width:80%">
-  <figcaption>Left-aligned agent jumppad success rates.</figcaption>
+  <figcaption style="width:80%"><blockquote>Left-aligned agent jumppad success rates.</blockquote></figcaption>
 </figure></center>
 
 ### Right Jumppad Alignment
 
+<figure>
 <video autoplay muted loop style="pos: left; width: 49%">
     <source src="assets/Aligned towards Right Jumppad/Right Example 1.mp4" type="video/mp4">
 </video>
@@ -122,10 +132,12 @@ We find that with this improved alignment procedure that we are able to reliably
 <video autoplay muted loop style="pos: right; width: 49%">
     <source src="assets/Aligned towards Right Jumppad/Right Example 4.mp4" type="video/mp4">
 </video>
+<figcaption><blockquote>Alternatively, the agent can be aligned to consistently reach the right jumppad.</blockquote></figcaption>
+</figure>
 
 <center><figure>
   <img src="assets/images/Fully RL Aligned Right_jumppad_success.png" alt="Right-Aligned Model Success Rate" style="width:80%">
-  <figcaption>Right-aligned agent jumppad success rates.</figcaption>
+  <figcaption style="width:80%"><blockquote>Right-aligned agent jumppad success rates.</blockquote></figcaption>
 </figure></center>
 
 ## Alignment Summary
@@ -134,11 +146,11 @@ A summary of our alignment procedure and a heatmap of agent trajectories for eac
 
 <center><figure>
   <img src="assets/images/Figure1.png" alt="Alignment Procedure Overview" style="width:100%">
-  <figcaption>Overview of aligning an agent like an LLM.</figcaption>
+  <figcaption><blockquote>Overview of our procedure for aligning an agent.</blockquote></figcaption>
 </figure></center>
 <center><figure>
   <img src="assets/images/Heatmap.png" alt="Agent Trajectories Heatmap" style="width:100%">
-  <figcaption>Heatmap of our agent's trajectories at each stage of alignment.</figcaption>
+  <figcaption><blockquote>Heatmap of our agent's trajectories at each stage of alignment.</blockquote></figcaption>
 </figure></center>
 
 ## Conclusion
