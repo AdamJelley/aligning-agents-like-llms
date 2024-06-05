@@ -17,7 +17,7 @@ Training an agent with imitation learning provides a scalable approach to learni
 <video autoplay muted loop style="pos: right; width: 49%">
     <source src="assets/Base Model/Shadow Boxing.mp4" type="video/mp4">
 </video>
-<figcaption><blockquote>A 103M parameter GPT-2 transformer agent, trained with imitation learning on 1.12 years of Bleeding Edge human gameplay. Not all imitated behaviors are desirable!</blockquote></figcaption>
+<figcaption><blockquote>A 103M parameter GPT-2 transformer agent, trained with imitation learning on 1.12 years of Bleeding Edge human gameplay. Not all imitated behaviors are desirable! <br/><br/>Note that videos are not representative of typical gameplay.</blockquote></figcaption>
 </figure>
 
 In this work, we consider an illustrative example where the agent spawns on an island with three jumppads (the yellow ramps in the above videos). We would like our agent to navigate directly to the left (or right) jumppad. We see that our general imitation learning agent sometimes performs this behavior, but not reliably.
@@ -92,7 +92,7 @@ Still following the LLM alignment pipeline, we now train a reward model to captu
 
 We can now align our agent with our preferences by further fine-tuning our agent with reinforcement learning using our reward models. We find that we are able to significantly improve alignment efficiency via first fine-tuning on the trajectories which are labelled with the greatest reward. This is similar to <a href="https://arxiv.org/abs/2308.08998">Reinforced Self-Training (ReST) (Gulcehre et al. 2023)</a> introduced for LLM alignment. We term this additional alignment step *preference fine-tuning*.
 
-We find that with this improved alignment procedure that we are able to reliably align our agent within our limited compute budget to reach both the left and the right jumppads.
+We find that with this improved alignment procedure we are able to reliably align our agent within our limited compute budget to reach both the left and the right jumppads.
 
 ### Left Jumppad Alignment
 
@@ -157,11 +157,13 @@ A summary of our alignment procedure and a heatmap of agent trajectories for eac
 
 We demonstrated that the modern LLM training procedure can be used to reliably align agents to perform desired behaviors in complex environments. These behaviors would be difficult to achieve with any one stage of training alone. Our analysis shows that many of the recent developments in the current procedure for training LLMs can also be applied and have similar benefits for training agents.
 
-Please see our paper for more details:
+Check out the full paper for more details:
+
+And a big thank you to [Ninja Theory](https://www.ninjatheory.com) for enabling this research as part of [Project Paidia](https://www.microsoft.com/en-us/research/project/project-paidia/)!
 
 ## Citation
 
-If you found our work interesting, please consider citing our paper!
+If you found this work interesting, please consider citing our paper:
 
 ```
 ```
