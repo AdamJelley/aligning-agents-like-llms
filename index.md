@@ -17,10 +17,10 @@ Training an agent with imitation learning provides a scalable approach to learni
 <video autoplay muted loop style="pos: right; width: 49%">
     <source src="assets/Base Model/Shadow Boxing.mp4" type="video/mp4">
 </video>
-<figcaption><blockquote>A 103M parameter GPT-2 transformer agent, trained with imitation learning on 1.12 years of Bleeding Edge human gameplay. Not all imitated behaviors are desirable! <br/><br/>Note that videos are not representative of typical gameplay.</blockquote></figcaption>
+<figcaption><blockquote>A 103M parameter GPT-style transformer agent, trained with imitation learning on 1.12 years of Bleeding Edge human gameplay. Not all imitated behaviors are desirable! <br/><br/>Note that videos are not representative of typical gameplay.</blockquote></figcaption>
 </figure>
 
-In this work, we consider an illustrative example where the agent spawns on an island with three jumppads (the yellow ramps in the above videos). We would like our agent to navigate directly to the left (or right) jumppad. We see that our general imitation learning agent sometimes performs this behavior, but not reliably.
+In this work, we consider an illustrative example where the agent spawns on an island with three jumppads (the yellow ramps in the above videos). We would like our agent to navigate directly to the left (or right) jumppad. We see that our general imitation learning agent sometimes performs this behavior, but not reliably, and over 40% of the time fails to reach any jumppad at all.
 
 <center><figure>
   <img src="assets/images/Base_jumppad_success.png" alt="Base Imitation Model Success Rate" style="width:80%">
@@ -45,7 +45,7 @@ By following the [modern LLM alignment pipeline](https://huyenchip.com/2023/05/0
 
 ## Supervised Fine-Tuning
 
-We begin by fine-tuning our base imitation agent on curated trajectories from expert players that travel directly to a jumppad.
+We begin by fine-tuning our base imitation agent on curated trajectories that travel directly to a jumppad.
 
 <figure>
 <video autoplay muted loop style="pos: right; width: 32%">
@@ -60,7 +60,7 @@ We begin by fine-tuning our base imitation agent on curated trajectories from ex
 <figcaption><blockquote>Demonstration trajectories of an agent going to the left, middle and right jumppads.</blockquote></figcaption>
 </figure>
 
-We find that our fine-tuned agent has an increased success rate for reaching all three jumppads. However, the agent still does not have a preference for a particular jumppad, and reaches all three in roughly even proportions.
+We find that our fine-tuned agent has an increased success rate for reaching all three jumppads. However, the agent still does not have a preference for a particular jumppad, and reaches all three in roughly even proportions (as expected from the training data).
 
 <center><figure>
   <img src="assets/images/Fine-tuned_jumppad_success.png" alt="Fine-Tuned Imitation Model Success Rate" style="width:80%">
