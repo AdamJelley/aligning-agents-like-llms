@@ -23,7 +23,7 @@ email: adam.jelley@ed.ac.uk
 description: >- # this means to ignore newlines until "baseurl:"
   <strong>Adam Jelley¹², Yuhan Cao¹, David Bignell¹,</br>Sam Devlin¹, Tabish Rashid¹</strong></br>
   ¹Microsoft Research Cambridge, ²University of Edinburgh</br></br>
-  Website for "Aligning Agents like Large Language Models". ArXiv:
+  Website for "Aligning Agents like Large Language Models". ArXiv: <a href="https://arxiv.org/abs/2406.04208">https://arxiv.org/abs/2406.04208</a>
 baseurl: "/aligning-agents-like-llms" # the subpath of your site, e.g. /blog
 url: "https://adamjelley.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb

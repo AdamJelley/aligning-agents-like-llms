@@ -157,7 +157,7 @@ A summary of our alignment procedure and a heatmap of agent trajectories for eac
 
 We demonstrated that the modern LLM training procedure can be used to reliably align agents to perform desired behaviors in complex environments. These behaviors would be difficult to achieve with any one stage of training alone. Our analysis shows that many of the recent developments in the current procedure for training LLMs can also be applied and have similar benefits for training agents.
 
-Check out the full paper for more details:
+Check out the full paper for more details: [https://arxiv.org/abs/2406.04208](https://arxiv.org/abs/2406.04208)
 
 And a big thank you to [Ninja Theory](https://www.ninjatheory.com) for enabling this research as part of [Project Paidia](https://www.microsoft.com/en-us/research/project/project-paidia/)!
 
@@ -166,4 +166,12 @@ And a big thank you to [Ninja Theory](https://www.ninjatheory.com) for enabling 
 If you found this work interesting, please consider citing our paper:
 
 ```
+@misc{jelley2024aligning,
+      title={Aligning Agents like Large Language Models},
+      author={Adam Jelley and Yuhan Cao and Dave Bignell and Sam Devlin and Tabish Rashid},
+      year={2024},
+      eprint={2406.04208},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG}
+}
 ```
