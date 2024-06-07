@@ -5,16 +5,16 @@ In this project, we investigate training an agent by following the modern Large 
 Training an agent with imitation learning provides a scalable approach to learning how to behave in a complex 3D environment from high-dimensional visual information (pixels). However, imitation agents do not always perform the desired behaviors when deployed!
 
 <figure>
-<video autoplay muted loop style="pos: left; width: 49%">
+<video autoplay muted loop playsinline style="pos: left; width: 49%">
     <source src="assets/Base Model/Bad Navigation.mp4" type="video/mp4">
 </video>
-<video autoplay muted loop style="pos: right; width: 49%">
+<video autoplay muted loop playsinline style="pos: right; width: 49%">
     <source src="assets/Base Model/Navigates Off Track.mp4" type="video/mp4">
 </video>
-<video autoplay muted loop style="pos: left; width: 49%">
+<video autoplay muted loop playsinline style="pos: left; width: 49%">
     <source src="assets/Base Model/Not Reaching Jumppad.mp4" type="video/mp4">
 </video>
-<video autoplay muted loop style="pos: right; width: 49%">
+<video autoplay muted loop playsinline style="pos: right; width: 49%">
     <source src="assets/Base Model/Shadow Boxing.mp4" type="video/mp4">
 </video>
 <figcaption><blockquote>A 103M parameter GPT-style transformer agent, trained with imitation learning on 1.12 years of Bleeding Edge human gameplay. Not all imitated behaviors are desirable! <br/><br/>Note that videos are not representative of typical gameplay.</blockquote></figcaption>
@@ -48,13 +48,13 @@ By following the [modern LLM alignment pipeline](https://huyenchip.com/2023/05/0
 We begin by fine-tuning our base imitation agent on curated trajectories that travel directly to a jumppad.
 
 <figure>
-<video autoplay muted loop style="pos: right; width: 32%">
+<video autoplay muted loop playsinline style="pos: right; width: 32%">
     <source src="assets/Fine-Tuned Model/Successful Left.mp4" type="video/mp4">
 </video>
-<video autoplay muted loop style="pos: left; width: 32%">
+<video autoplay muted loop playsinline style="pos: left; width: 32%">
     <source src="assets/Fine-Tuned Model/Successful Middle.mp4" type="video/mp4">
 </video>
-<video autoplay muted loop style="pos: right; width: 32%">
+<video autoplay muted loop playsinline style="pos: right; width: 32%">
     <source src="assets/Fine-Tuned Model/Successful Right.mp4" type="video/mp4">
 </video>
 <figcaption><blockquote>Demonstration trajectories of an agent going to the left, middle and right jumppads.</blockquote></figcaption>
@@ -70,10 +70,10 @@ We find that our fine-tuned agent has an increased success rate for reaching all
 While these demonstration trajectories can be successfully used for fine-tuning our agent, we find that training an agent from scratch on these limited trajectories does not perform as well. For example, we find that pre-training makes the agent more robust to going out of distribution of the fine-tuning trajectories, since the agent has additional information from pre-training on how to return to the distribution of desired trajectories.
 
 <figure>
-<video autoplay muted loop style="pos: left; width:49%">
+<video autoplay muted loop playsinline style="pos: left; width:49%">
   <source src="assets/Fine-Tuned Model/Fine-Tuned Missing but Turning Around.mp4" type="video/mp4">
 </video>
-<video autoplay muted loop style="pos: right; width:49%">
+<video autoplay muted loop playsinline style="pos: right; width:49%">
   <source src="assets/Fine-Tuned Only Model/Agent Missing.mp4" type="video/mp4">
 </video>
 <figcaption><blockquote>The general pre-trained agent (left) is more robust to going out-of-distribution than the fine-tuned only agent (right). This simple example demonstrates the benefits of incorporating larger scale data with unsupervised pre-training.</blockquote></figcaption>
@@ -97,16 +97,16 @@ We find that with this improved alignment procedure we are able to reliably alig
 ### Left Jumppad Alignment
 
 <figure>
-<video autoplay muted loop style="pos: left; width: 49%">
+<video autoplay muted loop playsinline style="pos: left; width: 49%">
     <source src="assets/Aligned towards Left Jumppad/Left Example 1.mp4" type="video/mp4">
 </video>
-<video autoplay muted loop style="pos: right; width: 49%">
+<video autoplay muted loop playsinline style="pos: right; width: 49%">
     <source src="assets/Aligned towards Left Jumppad/Left Example 2.mp4" type="video/mp4">
 </video>
-<video autoplay muted loop style="pos: left; width: 49%">
+<video autoplay muted loop playsinline style="pos: left; width: 49%">
     <source src="assets/Aligned towards Left Jumppad/Left Example 3.mp4" type="video/mp4">
 </video>
-<video autoplay muted loop style="pos: right; width: 49%">
+<video autoplay muted loop playsinline style="pos: right; width: 49%">
     <source src="assets/Aligned towards Left Jumppad/Left Example 4.mp4" type="video/mp4">
 </video>
 <figcaption><blockquote>The agent has been aligned to consistently reach the left jumppad.</blockquote></figcaption>
@@ -120,16 +120,16 @@ We find that with this improved alignment procedure we are able to reliably alig
 ### Right Jumppad Alignment
 
 <figure>
-<video autoplay muted loop style="pos: left; width: 49%">
+<video autoplay muted loop playsinline style="pos: left; width: 49%">
     <source src="assets/Aligned towards Right Jumppad/Right Example 1.mp4" type="video/mp4">
 </video>
-<video autoplay muted loop style="pos: right; width: 49%">
+<video autoplay muted loop playsinline style="pos: right; width: 49%">
     <source src="assets/Aligned towards Right Jumppad/Right Example 2.mp4" type="video/mp4">
 </video>
-<video autoplay muted loop style="pos: left; width: 49%">
+<video autoplay muted loop playsinline style="pos: left; width: 49%">
     <source src="assets/Aligned towards Right Jumppad/Right Example 3.mp4" type="video/mp4">
 </video>
-<video autoplay muted loop style="pos: right; width: 49%">
+<video autoplay muted loop playsinline style="pos: right; width: 49%">
     <source src="assets/Aligned towards Right Jumppad/Right Example 4.mp4" type="video/mp4">
 </video>
 <figcaption><blockquote>Alternatively, the agent can be aligned to consistently reach the right jumppad.</blockquote></figcaption>
