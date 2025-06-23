@@ -1,5 +1,5 @@
 # Aligning Agents Like LLMs
-This repository contains supplmentary videos for the paper "Aligning Agents like LLMs", under review for NeurIPS 2024.
+This repository contains supplmentary videos for the [paper](https://arxiv.org/abs/2406.04208) "Aligning Agents like LLMs".
 
 The videos show sample behaviours of our trained models in the Bleeding Edge environment. Our agents receive the *same* images shown as input (which are resized and fed into CNN layers), and output a gamepad action at each timestep.
 
